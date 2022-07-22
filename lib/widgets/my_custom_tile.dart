@@ -17,7 +17,7 @@ class MyCustomTile extends StatelessWidget {
     return ListTile(
       onTap: onClickEvent,
 
-      title: Text(title!),
+      title: Text(title),
       leading: CircleAvatar(
         //child: Text("H"),
         //child: Icon(icon),

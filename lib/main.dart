@@ -18,77 +18,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-         children: [
-           const UserAccountsDrawerHeader(
-             accountName: const Text("Abu Rushed"),
-             accountEmail: const Text("aburushed@gmail.com"),
-             currentAccountPicture: CircleAvatar(
-               child:Icon(Icons.person),
-             ),
-             
-           ),
-          MyCustomTile(title:userList[0],icon: null,onClickEvent:(){
-            Navigator.pop(context);
-            Fluttertoast.showToast(msg:userList[0]);
-
-          },
-            subtitle: "30 min ago",
-            trailing: "10",
-          ),
-
-           MyCustomTile(title:userList[1],icon: null,onClickEvent:(){
-             Navigator.pop(context);
-           }),
-
-           ListTile(
-             onTap: (){
-              Navigator.pop(context);//drawar back
-             },
-
-             title: Text(userList[0]),
-             leading: CircleAvatar(
-               //child: Text("H"),
-               child: Icon(Icons.person),
-             ),
-             trailing: Text("10"),
-
-           ),
-           const Divider(height:1,),
-           ListTile(
-             onTap: (){
-               Navigator.pop(context);//drawar back
-             },
-
-             title: Text(userList[1]),
-             leading: CircleAvatar(
-               child: Text("C"),
-               //child: Icon(Icons.person),
-             ),
-             trailing: Text("10"),
-
-           ),
-           const Divider(height:1,),
-           ListTile(
-             onTap: (){
-               Navigator.pop(context);//drawar back
-             },
-
-             title: Text(userList[2]),
-             leading: CircleAvatar(
-               child: Text("F"),
-               //child: Icon(Icons.person),
-             ),
-             trailing: Text("10"),
-             subtitle: Text("Favourite"),
-
-           )
-
-         ],
-        ),
-      ),
+      drawer: _mydrawer(context),
 
       appBar: AppBar(
         title:const Text("Home Screen"),
@@ -136,6 +66,80 @@ class Home extends StatelessWidget {
 
       ),
 
+    );
+  }
+
+  _mydrawer(BuildContext context) {
+    return Drawer(
+      backgroundColor: Colors.white,
+      child: ListView(
+        children: [
+          const UserAccountsDrawerHeader(
+            accountName: const Text("Abu Rushed"),
+            accountEmail: const Text("aburushed@gmail.com"),
+            currentAccountPicture: CircleAvatar(
+              child:Icon(Icons.person),
+            ),
+
+          ),
+          MyCustomTile(title:userList[0],icon: null,onClickEvent:(){
+            Navigator.pop(context);
+            Fluttertoast.showToast(msg:userList[0]);
+
+          },
+            subtitle: "30 min ago",
+            trailing: "10",
+          ),
+
+          MyCustomTile(title:userList[1],icon: null,onClickEvent:(){
+            Navigator.pop(context);
+          }),
+
+          ListTile(
+            onTap: (){
+              Navigator.pop(context);//drawar back
+            },
+
+            title: Text(userList[0]),
+            leading: CircleAvatar(
+              //child: Text("H"),
+              child: Icon(Icons.person),
+            ),
+            trailing: Text("10"),
+
+          ),
+          const Divider(height:1,),
+          ListTile(
+            onTap: (){
+              Navigator.pop(context);//drawar back
+            },
+
+            title: Text(userList[1]),
+            leading: CircleAvatar(
+              child: Text("C"),
+              //child: Icon(Icons.person),
+            ),
+            trailing: Text("10"),
+
+          ),
+          const Divider(height:1,),
+          ListTile(
+            onTap: (){
+              Navigator.pop(context);//drawar back
+            },
+
+            title: Text(userList[2]),
+            leading: CircleAvatar(
+              child: Text("F"),
+              //child: Icon(Icons.person),
+            ),
+            trailing: Text("10"),
+            subtitle: Text("Favourite"),
+
+          )
+
+        ],
+      ),
     );
   }
 }
